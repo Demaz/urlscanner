@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Class-Path: junit-4.11.jar spring-2.5.6.SEC03.jar spring-test-3.2.5.RE
+ LEASE.jar spring-context-3.2.5.RELEASE.jar spring-tx-3.2.5.RELEASE.ja
+ r spring-core-3.2.5.RELEASE.jar spring-orm-3.2.5.RELEASE.jar postgres
+ ql-9.1-901.jdbc4.jar quartz-2.2.1.jar commons-logging-1.1.1.jar jaxb-
+ api-2.2.11.jar hibernate-core-4.2.7.Final.jar commons-collections-3.2
+ .1.jar mockito-all-1.9.5.jar
+Build-Jdk: 1.7.0_45
+Built-By: BAB
+Created-By: Maven Integration for Eclipse
+Main-Class: service.seo.url.App
+
