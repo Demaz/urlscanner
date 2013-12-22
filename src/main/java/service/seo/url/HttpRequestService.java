@@ -103,7 +103,11 @@ public class HttpRequestService {
 		connection.setFollowRedirects(false);
 		connection.connect();
 		responseDetails.put("RESPONSE_CODE", String.valueOf(connection.getResponseCode()));
-		responseDetails.put("DESTINATION_URL", connection.getHeaderField("Location"));
+		if(connection.getHeaderField("Location") != null) {
+			responseDetails.put("DESTINATION_URL", connection.getHeaderField("Location"));
+		} else {
+			responseDetails.put("DESTINATION_URL", url);
+		}
 		
 		return (HashMap<String, String>) responseDetails;
 	}
@@ -136,7 +140,7 @@ public class HttpRequestService {
 			currentUrlsList.remove(urlToDelete);
 		}
 		
-		return urlsFromSitemap;
+		return currentUrlsList;
 	}
 
 }

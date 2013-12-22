@@ -43,13 +43,14 @@ public class HttpRequestServiceTest {
 		service.setUrlCheckDaoService(urlCheckDaoService);
 	}
 	
-	
+	@Ignore
 	@Test
 	public void doFullRequestTest() throws IOException {
 	HashMap<String,String>	responseDetails = service.doFullRequest("http://www.kiabi.com/chaussettes-petit-garcon_202405");
 	responseDetails.get("DESTINATION_URL");
 	}
 	
+	@Ignore
 	@Test
 	public void mergeBddUrlfromSitemapForStatsTest() throws MalformedURLException, JAXBException {
 		 Urlset urlSet = service.getLastVersionOfSitemap();
@@ -58,6 +59,11 @@ public class HttpRequestServiceTest {
 		 currentUrlMock.put("http://www.kiabi.com", 1);
 		 //Mockito.when(urlCheckDaoServiceMock.getCurrentUrlToCheck(12)).thenReturn(currentUrlMock);
 		service.mergeBddUrlfromSitemapForStats(urlSet, 12);
+	}
+	
+	@Test
+	public void analyzeUrlTest() throws JAXBException, IOException, InterruptedException {
+		service.analyzeUrl();
 	}
 	
 	

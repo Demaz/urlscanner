@@ -80,7 +80,7 @@ public class UrlCheckDaoService {
 	}
 	
 	public void saveUrlCheckResult(Turltocheck urlToCheck, HashMap<String, String> responseDetails) {
-		getJdbcTemplate().execute("INSERT INTO turlcheckedresults(DESTINATION_URL,RESPONSECODE,UID_URL) VALUES('"+responseDetails.get("DESTINATION_URL")+"','"+responseDetails.get("RESPONSE_CODE")+"',"+urlToCheck.getUid()+")");
+		getJdbcTemplate().execute("INSERT INTO turlcheckedresults(DESTINATION_URL,RESPONSECODE,URL_UID) VALUES('"+responseDetails.get("DESTINATION_URL")+"','"+responseDetails.get("RESPONSE_CODE")+"',"+urlToCheck.getUid()+")");
 	}
 
 }
