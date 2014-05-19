@@ -18,7 +18,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE turlcheckedresults
-  OWNER TO "BAB";
+  OWNER TO "pgmaster";
   
   
   -- Table: turltocheck
@@ -36,5 +36,5 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE turltocheck
-  OWNER TO "BAB";
+  OWNER TO "pgmaster";
 

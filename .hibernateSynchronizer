@@ -1,0 +1,5 @@
+package=domaine.seo.url
+databaseUrl=jdbc:postgresql://localhost:5433/postgres
+driver=org.postgresql.Driver
+username=BAB
+ConfigurationFile=\urlscanner\src\main\resources\hibernate.cfg.xml

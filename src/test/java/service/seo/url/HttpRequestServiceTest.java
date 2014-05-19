@@ -37,7 +37,7 @@ public class HttpRequestServiceTest {
 	
 	@Before
 	public void configTest() {
-		DataSource source = new DriverManagerDataSource("jdbc:postgresql://localhost:5433/postgres","BAB","");
+		DataSource source = new DriverManagerDataSource("jdbc:postgresql://localhost:5432/seoscanner","pgmaster","seo");
 		UrlCheckDaoService urlCheckDaoService = new UrlCheckDaoService();
 		urlCheckDaoService.setDataSource(source);
 		service.setUrlCheckDaoService(urlCheckDaoService);
