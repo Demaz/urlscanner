@@ -15,14 +15,13 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import service.seo.dao.UrlCheckDaoService;
-import service.seo.dto.Urlset;
 
-import org.mockito.runners.MockitoJUnit44Runner;
 import org.mockito.runners.MockitoJUnitRunner;
 
 
@@ -32,15 +31,14 @@ public class HttpRequestServiceTest {
 	//@Mock
 	//UrlCheckDaoService urlCheckDaoServiceMock;
 	
-	@InjectMocks
-	HttpRequestService service = new HttpRequestService();
-	
+	HttpRequestService service;
+		
 	@Before
 	public void configTest() {
-		DataSource source = new DriverManagerDataSource("jdbc:postgresql://localhost:5432/seoscanner","pgmaster","seo");
-		UrlCheckDaoService urlCheckDaoService = new UrlCheckDaoService();
-		urlCheckDaoService.setDataSource(source);
-		service.setUrlCheckDaoService(urlCheckDaoService);
+//		DataSource source = new DriverManagerDataSource("jdbc:postgresql://localhost:5432/seoscanner","pgmaster","seo");
+//		UrlCheckDaoService urlCheckDaoService = new UrlCheckDaoService();
+//		urlCheckDaoService.
+//		service.setUrlCheckDaoService(urlCheckDaoService);
 	}
 	
 	@Ignore
@@ -53,7 +51,7 @@ public class HttpRequestServiceTest {
 	@Ignore
 	@Test
 	public void mergeBddUrlfromSitemapForStatsTest() throws MalformedURLException, JAXBException {
-		 Urlset urlSet = service.getLastVersionOfSitemap();
+		 seo.scanner.dto.Urlset urlSet = service.getLastVersionOfSitemap();
 		 
 		 Map<String,Integer> currentUrlMock = new HashMap<String,Integer>();
 		 currentUrlMock.put("http://www.kiabi.com", 1);
@@ -63,7 +61,9 @@ public class HttpRequestServiceTest {
 	
 	@Test
 	public void analyzeUrlTest() throws JAXBException, IOException, InterruptedException {
-		service.analyzeUrl();
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("urlscannerContext.xml");
+		HttpRequestService serviceInt = (HttpRequestService) context.getBean("httpRequestService");
+		serviceInt.doEvent();
 	}
 	
 	

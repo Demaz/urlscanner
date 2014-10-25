@@ -1,17 +1,19 @@
 Manifest-Version: 1.0
 Class-Path: junit-4.11.jar hamcrest-core-1.3.jar spring-2.5.6.SEC03.ja
- r spring-test-3.2.5.RELEASE.jar spring-context-3.2.5.RELEASE.jar spri
- ng-aop-3.2.5.RELEASE.jar spring-beans-3.2.5.RELEASE.jar spring-expres
- sion-3.2.5.RELEASE.jar spring-tx-3.2.5.RELEASE.jar aopalliance-1.0.ja
- r spring-core-3.2.5.RELEASE.jar spring-orm-3.2.5.RELEASE.jar spring-j
- dbc-3.2.5.RELEASE.jar postgresql-9.1-901.jdbc4.jar quartz-2.2.1.jar c
+ r spring-test-3.2.5.RELEASE.jar spring-context-4.0.4.RELEASE.jar spri
+ ng-aop-4.0.4.RELEASE.jar aopalliance-1.0.jar spring-beans-4.0.4.RELEA
+ SE.jar spring-expression-4.0.4.RELEASE.jar spring-tx-4.0.4.RELEASE.ja
+ r spring-core-4.0.4.RELEASE.jar spring-orm-4.0.4.RELEASE.jar spring-j
+ dbc-4.0.4.RELEASE.jar postgresql-9.1-901.jdbc4.jar quartz-2.2.1.jar c
  3p0-0.9.1.1.jar slf4j-api-1.6.6.jar commons-logging-1.1.1.jar jaxb-ap
  i-2.2.11.jar hibernate-core-4.2.7.Final.jar antlr-2.7.7.jar jboss-log
  ging-3.1.0.GA.jar dom4j-1.6.1.jar javassist-3.18.1-GA.jar jboss-trans
  action-api_1.1_spec-1.0.1.Final.jar hibernate-jpa-2.0-api-1.0.1.Final
  .jar hibernate-commons-annotations-4.0.2.Final.jar commons-collection
- s-3.2.1.jar mockito-all-1.9.5.jar
-Build-Jdk: 1.7.0_55
+ s-3.2.1.jar mockito-all-1.9.5.jar global-dto-0.0.1-SNAPSHOT.jar dataS
+ ervice-0.0.1-SNAPSHOT.jar spring-web-4.0.4.RELEASE.jar spring-webmvc-
+ 4.0.4.RELEASE.jar servlet-api-2.5.jar jcsv-1.4.0.jar
+Build-Jdk: 1.7.0_71
 Built-By: demaz
 Created-By: Maven Integration for Eclipse
 Main-Class: service.seo.url.App
