@@ -20,7 +20,7 @@ import org.springframework.cglib.core.Transformer;
 
 import seo.scanner.dataService.ProjetService;
 import seo.scanner.domain.Event;
-import seo.scanner.domain.UrlToCheck;
+import seo.scanner.domain.UrlCheckResult;
 import seo.scanner.dto.TUrl;
 import seo.scanner.dto.Urlset;
 import service.seo.dao.UrlCheckDaoService;
@@ -69,32 +69,38 @@ public class HttpRequestService {
 
 	}
 
-	public void checkUrlsList(List<UrlToCheck> urlsToCheck, int timeToWiteBetweenHttpCall) throws InterruptedException,
-			IOException {
+	public void checkUrlsList(Event event, List<UrlCheckResult> urlCheckResults, int timeToWaitBetweenHttpCall)
+			throws InterruptedException, IOException {
 
-		for (UrlToCheck urlToCheck : urlsToCheck) {
+		int counter = 1;
+		for (UrlCheckResult urlCheckResult : urlCheckResults) {
 
-			System.out.print("Check url : " + urlToCheck);
-			HashMap<String, String> responseDetails = doFullRequest(urlToCheck.getUrl());
+			HashMap<String, String> responseDetails = doFullRequest(urlCheckResult.getUrl());
+			System.out.print("Check url " + counter + "/" + urlCheckResults.size() + " : " + urlCheckResult.getUrl()
+					+ " => url " + responseDetails.get("DESTINATION_URL") + " => code : "
+					+ responseDetails.get("RESPONSE_CODE") + "\n");
+			urlCheckResult.setRedirectionUrl1(responseDetails.get("DESTINATION_URL"));
+			urlCheckResult.setRedirectionUrlCode1(responseDetails.get("RESPONSE_CODE"));
+			urlCheckResult.setEventUid(event.getUid());
+			projetService.addCheckResult(urlCheckResult);
 
-			urlToCheck.setRedirectionUrl1(responseDetails.get("DESTINATION_URL"));
-			urlToCheck.setRedirectionUrlCode1(responseDetails.get("RESPONSE_CODE"));
-
-			projetService.addCheckResult(urlToCheck);
-
-			Thread.sleep(timeToWiteBetweenHttpCall);
+			Thread.sleep(timeToWaitBetweenHttpCall);
+			counter++;
 		}
 	}
 
 	public void doEvent() throws InterruptedException, IOException {
 
 		List<Event> events = projetService.getAllEventsToDo();
+		System.out.print("Event to do : " + events.size() + "\n");
 		for (Event event : events) {
-			List<UrlToCheck> urlsToCheck = projetService.getUrlToCheck(event.getProjetListUrlUid());
+			List<UrlCheckResult> urlCheckResult = projetService.getUrlToCheck(event.getProjetListUrlUid());
 			projetService.flagEventStart(event);
-			checkUrlsList(urlsToCheck, 1500);
+			checkUrlsList(event, urlCheckResult, 500);
 			projetService.flagEventEnd(event);
 		}
+
+		System.out.print("Event to end : " + events.size() + "\n");
 
 	}
 

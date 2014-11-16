@@ -21,28 +21,27 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 <bean id="urlCheckDaoService" class="service.seo.dao.UrlCheckDaoService" />
 
-<!--  
+
 <bean id="schedulerTask" class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
 	    <property name="targetObject" ref="httpRequestService" />
-	    <property name="targetMethod" value="doRequest" />
+	    <property name="targetMethod" value="doEvent" />
 </bean>
 
 <bean id="timerTask"
 	    class="org.springframework.scheduling.timer.ScheduledTimerTask">
 	    <property name="timerTask" ref="schedulerTask" />
 	    <property name="delay" value="1000" />
-	    <property name="period" value="0" />
+	    <property name="period" value="5000" />
 	</bean>
 
 <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
 	    <property name="scheduledTimerTasks">
 	        <list>
-	            <ref local="timerTask" />
+	            <ref  bean="timerTask" />
 	        </list>
 	    </property>
 </bean>
 
--->
 
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />

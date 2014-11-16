@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.93" errors="1" skipped="2" tests="3" name="service.seo.url.HttpRequestServiceTest">
+<testsuite failures="0" time="0.792" errors="0" skipped="2" tests="3" name="service.seo.url.HttpRequestServiceTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/local/java/jdk1.7.0_71/jre/lib/amd64"/>
@@ -30,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="3.13.0-37-generic"/>
+    <property name="os.version" value="3.13.0-39-generic"/>
     <property name="user.home" value="/home/demaz"/>
     <property name="user.timezone" value="Europe/Brussels"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -59,62 +59,11 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="1.817" classname="service.seo.url.HttpRequestServiceTest" name="doFullRequestTest">
+  <testcase time="1.902" classname="service.seo.url.HttpRequestServiceTest" name="doFullRequestTest">
     <skipped/>
   </testcase>
-  <testcase time="1.818" classname="service.seo.url.HttpRequestServiceTest" name="mergeBddUrlfromSitemapForStatsTest">
+  <testcase time="1.902" classname="service.seo.url.HttpRequestServiceTest" name="mergeBddUrlfromSitemapForStatsTest">
     <skipped/>
   </testcase>
-  <testcase time="1.651" classname="service.seo.url.HttpRequestServiceTest" name="analyzeUrlTest">
-    <error message="java.lang.Integer cannot be cast to java.lang.String" type="java.lang.ClassCastException">java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
-	at seo.scanner.dataService.ProjetService.getEventsToDo(ProjetService.java:410)
-	at service.seo.url.HttpRequestService.doEvent(HttpRequestService.java:81)
-	at service.seo.url.HttpRequestServiceTest.analyzeUrlTest(HttpRequestServiceTest.java:66)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.mockito.internal.runners.JUnit45AndHigherRunnerImpl.run(JUnit45AndHigherRunnerImpl.java:37)
-	at org.mockito.runners.MockitoJUnitRunner.run(MockitoJUnitRunner.java:62)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-    <system-err>oct. 21, 2014 9:34:42 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
-INFOS: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@8cc1102: display name [org.springframework.context.support.ClassPathXmlApplicationContext@8cc1102]; startup date [Tue Oct 21 21:34:42 CEST 2014]; root of context hierarchy
-oct. 21, 2014 9:34:42 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
-INFOS: Loading XML bean definitions from class path resource [urlscannerContext.xml]
-oct. 21, 2014 9:34:42 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
-INFOS: Loading XML bean definitions from class path resource [applicationContext.xml]
-oct. 21, 2014 9:34:42 PM org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
-INFOS: Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@8cc1102]: org.springframework.beans.factory.support.DefaultListableBeanFactory@14ea1f1d
-oct. 21, 2014 9:34:42 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
-INFOS: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@14ea1f1d: defining beans [org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,projetService,httpRequestService,urlCheckDaoService,dataSource]; root of factory hierarchy
-oct. 21, 2014 9:34:42 PM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
-INFOS: Loaded JDBC driver: org.postgresql.Driver
-</system-err>
-  </testcase>
+  <testcase time="0.495" classname="service.seo.url.HttpRequestServiceTest" name="analyzeUrlTest"/>
 </testsuite>
